@@ -21,7 +21,7 @@ export class CollectionState<
 	}
 
 	async #read() {
-		const result = await this.#databases.listDocuments<CollectionAttributeMap[T][U]>( // make this typed as well
+		const result = await this.#databases.listDocuments<CollectionAttributeMap[T][U]>(
 			this.#databaseId,
 			this.#collectionId,
 			this.#queries
@@ -30,12 +30,5 @@ export class CollectionState<
         console.log(result);
 
         this.documents = result.documents;
-        /**
-         * get rid of this error:
-         * Type 'Document[]' is not assignable to type 'CollectionAttributeMap[T][U]'.
-  Type 'Document[]' is not assignable to type 'TasksCollectionAttributes & UsersCollectionAttributes'.
-    Type 'Document[]' is missing the following properties from type 'TasksCollectionAttributes': title, isCompletedts(2322)
-(property) CollectionState<T extends DatabaseName, U extends CollectionName<T>>.documents: CollectionAttributeMap[T][U] | undefined
-         */
 	}
 }

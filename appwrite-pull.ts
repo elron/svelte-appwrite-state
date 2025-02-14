@@ -100,12 +100,12 @@ ${Object.entries(collectionTypeMappings)
 export type CollectionName<T extends DatabaseName> = CollectionsByDatabase[T];
 
 // Fully Typed CollectionState Function
-export function CollectionState<
-	T extends DatabaseName,
-	U extends CollectionName<T>
->(database: T, collection: U): (CollectionAttributeMap[T][U] & Models.Document)[] {
-	return [] as (CollectionAttributeMap[T][U] & Models.Document)[];
-}
+// export function appwriteCollection<
+// 	T extends DatabaseName,
+// 	U extends CollectionName<T>
+// >(database: T, collection: U): (CollectionAttributeMap[T][U] & Models.Document)[] {
+// 	return [] as (CollectionAttributeMap[T][U] & Models.Document)[];
+// }
 `;
 
   // Write to TypeScript file
